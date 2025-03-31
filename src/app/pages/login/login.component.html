@@ -1,0 +1,62 @@
+<div class="dimension-login d-flex align-items-center justify-content-center">
+    <div class="portal-container">
+        <div class="portal-gateway">
+            <div class="portal-animation">
+                <div class="portal-ring outer"></div>
+                <div class="portal-ring middle"></div>
+                <div class="portal-ring inner"></div>
+                <div class="portal-core"></div>
+            </div>
+
+            <div class="login-panel">
+                <div class="login-header text-center mb-4">
+                    <h2>PORTAL LOGIN</h2>
+                    <p>Acesso Dimensional C-137</p>
+                </div>
+
+                <form (ngSubmit)="login()" class="login-form">
+                    <div class="form-field mb-3">
+                        <label for="username" class="d-block mb-2">IDENTIFICAÇÃO DIMENSIONAL</label>
+                        <div class="input-wrapper position-relative">
+                            <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username"
+                                required placeholder="RickSanchez@C-137">
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field mb-4">
+                        <label for="password" class="d-block mb-2">SENHA INTERDIMENSIONAL</label>
+                        <div class="input-wrapper position-relative">
+                            <input type="password" id="password" class="form-control" [(ngModel)]="password"
+                                name="password" required placeholder="••••••••">
+                            <div class="input-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12,3A4,4 0 0,0 8,7V8H7.5A1.5,1.5 0 0,0 6,9.5V18A1.5,1.5 0 0,0 7.5,19.5H16.5A1.5,1.5 0 0,0 18,18V9.5A1.5,1.5 0 0,0 16.5,8H16V7A4,4 0 0,0 12,3M12,5A2,2 0 0,1 14,7V8H10V7A2,2 0 0,1 12,5Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="portal-btn w-100">
+                        <span>ATIVAR PORTAL</span>
+                    </button>
+                </form>
+
+                <div *ngIf="errorMessage" class="error-alert d-flex align-items-center mt-4">
+                    <svg viewBox="0 0 24 24" class="me-2">
+                        <path
+                            d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                    <span class="flex-grow-1">{{errorMessage}}</span>
+                    <button (click)="errorMessage = ''" class="ms-2">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
