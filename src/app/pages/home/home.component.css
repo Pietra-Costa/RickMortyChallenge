@@ -16,3 +16,26 @@
     -webkit-backdrop-filter: blur(9.4px);
     border: 1px solid rgba(0, 153, 104, 0.3);
 }
+
+.glass-effect:hover {
+    transform: scale(1.05);
+
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card-text.text-muted {
+    color: #ddd;
+}

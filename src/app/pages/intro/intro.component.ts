@@ -11,7 +11,7 @@ export class IntroComponent {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigateByUrl('/home');
+      this.router.navigate(['/login']);
     }, 3000);
   }
 }
