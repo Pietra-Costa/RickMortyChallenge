@@ -1,0 +1,15 @@
+<!-- src/app/perfil/perfil.component.html -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h2 class="text-center">Perfil</h2>
+            <div *ngIf="username; else noUser">
+                <p><strong>Bem-vindo, {{ username }}!</strong></p>
+            </div>
+            <ng-template #noUser>
+                <p>{{ errorMessage }}</p>
+            </ng-template>
+            <button class="btn btn-danger btn-block" (click)="logout()">Sair</button>
+        </div>
+    </div>
+</div>
