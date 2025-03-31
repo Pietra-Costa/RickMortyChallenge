@@ -1,0 +1,15 @@
+<div *ngIf="!loading && !finished" class="row">
+    <div *ngFor="let location of filteredLocations" class="col-md-4 col-sm-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ location.name }}</h5>
+                <p class="card-text">
+                    <strong>Tipo:</strong> {{ location.type }} <br />
+                    <strong>Dimensão:</strong> {{ location.dimension }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--27/27-->
