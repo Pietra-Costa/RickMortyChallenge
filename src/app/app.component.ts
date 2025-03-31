@@ -45,4 +45,13 @@ export class AppComponent implements OnInit {
   onSearchChange() {
     this.searchService.updateSearchTerm(this.searchTerm);
   }
+
+  username: string | null = localStorage.getItem('user');
+  get isLoggedIn(): boolean {
+    return !!this.username;
+  }
+  logout() {
+    localStorage.removeItem('user');
+    window.location.href = '/';
+  }
 }

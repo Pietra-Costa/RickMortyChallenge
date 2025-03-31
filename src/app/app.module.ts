@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IntroComponent } from './pages/intro/intro.component';
@@ -13,6 +12,8 @@ import { RickmortyapiService } from './services/rickmortyapi.service';
 import { FormsModule } from '@angular/forms';
 import { LocationComponent } from './pages/location/location.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { RouterModule } from '@angular/router';
     EpisodesComponent,
     NavbarComponent,
     LocationComponent,
+    LoginComponent,
+    ProfileComponent,
   ],
   exports: [RouterModule],
   imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule],
