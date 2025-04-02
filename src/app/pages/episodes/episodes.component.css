@@ -1,0 +1,275 @@
+.rick-morty-bg {
+    background: radial-gradient(circle at center, #0a0e12 0%, #000 100%);
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.trading-card {
+    width: 100%;
+    max-width: 300px;
+    height: 420px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.5s;
+    margin-bottom: 30px;
+}
+
+.trading-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 255, 159, 0.3);
+    border: 2px solid rgba(0, 255, 159, 0.3);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #1a1e29 0%, #0e121b 100%);
+    transform: rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+}
+
+.trading-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #0e121b 0%, #1a1e29 100%);
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trading-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.character-portrait {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 255, 159, 0.3);
+}
+
+.episode-icon {
+    width: 60%;
+    height: 60%;
+    color: #00ff9f;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+
+.trading-card:hover .episode-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.episode-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #81d4fa;
+    color: #0a0e12;
+    box-shadow: 0 0 10px rgba(129, 212, 250, 0.7);
+}
+
+.card-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-name {
+    color: #00ff9f;
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 159, 0.5);
+    text-align: center;
+}
+
+.character-meta {
+    margin-top: auto;
+}
+
+.species {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 255, 159, 0.1);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #81d4fa;
+    font-size: 0.9rem;
+}
+
+.meta-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    color: #81d4fa;
+}
+
+.card-corners {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-color: #00ff9f;
+    border-style: solid;
+    border-width: 0;
+    opacity: 0.5;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 5px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-top-right-radius: 5px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-bottom-left-radius: 5px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-bottom-right-radius: 5px;
+}
+
+.card-back-design {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portal-svg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    opacity: 0.3;
+    animation: rotatePortal 20s linear infinite;
+}
+
+@keyframes rotatePortal {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.back-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.card-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    color: #00ff9f;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-logo span:first-child {
+    font-size: 1.8rem;
+    line-height: 1;
+    letter-spacing: 3px;
+}
+
+.card-logo span:last-child {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 159, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+.trading-card:hover .card-glow {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .trading-card {
+        height: 380px;
+    }
+
+    .character-portrait {
+        height: 200px;
+    }
+
+    .character-name {
+        font-size: 1.3rem;
+    }
+}

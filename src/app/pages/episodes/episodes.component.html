@@ -1,13 +1,52 @@
-<div *ngIf="!loading && !finished" class="row">
-    <div *ngFor="let episode of filteredEpisodes" class="col-md-4 col-sm-6 mb-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ episode.name }}</h5>
-                <p class="card-text">
-                    <strong>Data de Estreia em:</strong> {{ episode.air_date }} <br />
-                    <strong>Temporada:</strong> {{ episode.episode }}
-                </p>
+<div *ngIf="!loading && !finished" class="row justify-content-center g-4 rick-morty-bg">
+    <div *ngFor="let episode of filteredEpisodes"
+        class="col-xl-3 col-lg-4 col-md-6 col-12 mb-5 d-flex justify-content-center">
+        <div class="trading-card">
+            <div class="card-face card-front">
+                <div class="character-portrait">
+                    <svg class="episode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#00ff9f"
+                            d="M18,9H16V7H18M18,13H16V11H18M18,17H16V15H18M8,9H6V7H8M8,13H6V11H8M8,17H6V15H8M18,3V5H16V3H8V5H6V3H4V21H6V19H8V21H16V19H18V21H20V3H18Z" />
+                    </svg>
+                    <div class="character-badge episode-badge">
+                        {{ episode.episode.slice(1,3) }}x{{ episode.episode.slice(4) }}
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="character-name">{{ episode.name }}</h3>
+                    <div class="character-meta">
+                        <span class="species">
+                            <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="#81d4fa"
+                                    d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                            </svg>
+                            {{ episode.air_date }}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-corners">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                </div>
             </div>
+            <div class="card-face card-back">
+                <div class="card-back-design">
+                    <svg class="portal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path fill="none" stroke="#00ff9f" stroke-width="0.5" d="M20,50 Q50,20 80,50 Q50,80 20,50 Z" />
+                        <path fill="none" stroke="#81d4fa" stroke-width="0.3" d="M30,50 Q50,30 70,50 Q50,70 30,50 Z" />
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#ffeb3b" stroke-width="0.2" />
+                    </svg>
+                    <div class="back-content">
+                        <div class="card-logo">
+                            <span>R&M</span>
+                            <span>EPISODES</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-glow"></div>
         </div>
     </div>
 </div>
