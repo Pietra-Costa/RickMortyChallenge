@@ -1,27 +1,77 @@
-# RickMortyChallenge
+# Rick and Morty API - Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.16.
+![image](https://github.com/user-attachments/assets/78ebb0ff-9bb4-46a8-ac0a-a45f5c2f530e)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📌 Descrição
+Este é um projeto Angular que consome a API de Rick and Morty, permitindo visualizar personagens, episódios e localizações da famosa série animada.
 
-## Code scaffolding
+## 🚀 Tecnologias Utilizadas
+- **Angular** (Framework principal)
+- **TypeScript** (Linguagem utilizada)
+- **Bootstrap** (Estilização)
+- **Angular Services & HttpClient** (Consumo da API)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📂 Estrutura do Projeto
+```
+📦 rick-and-morty-app
+├── 📁 src
+│   ├── 📁 app
+│   │   ├── 📁 components  # Componentes da aplicação
+│   │   ├── 📁 services    # Serviços de requisições HTTP
+│   │   ├── 📁 models      # Modelos de dados
+│   │   ├── 📄 app.module.ts
+│   │   ├── 📄 app.component.ts
+│   │   ├── 📄 app.routing.module.ts
+├── 📄 package.json
+├── 📄 angular.json
+└── 📄 README.md
+```
 
-## Build
+## 🔑 Autenticação
+O sistema possui uma autenticação simples com os seguintes usuários mockados:
+```json
+[
+  { "username": "admin", "password": "admin123" },
+  { "username": "user", "password": "user123" }
+]
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📜 Funcionalidades
+✅ Listagem de personagens, episódios e localizações.  
+✅ Busca por nome de personagem.  
+✅ Detalhes de cada personagem com episódios relacionados.  
+✅ Sistema de login simples.  
 
-## Running unit tests
+## 📦 Instalação e Uso
+1. Clone este repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/rick-and-morty-angular.git
+   ```
+2. Entre na pasta do projeto:
+   ```sh
+   cd rick-and-morty-angular
+   ```
+3. Instale as dependências:
+   ```sh
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```sh
+   ng serve
+   ```
+5. Acesse no navegador:
+   ```
+   http://localhost:4200/
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📌 API Utilizada
+O projeto consome a API pública do Rick and Morty:
+🔗 [Rick and Morty API](https://rickandmortyapi.com/)
 
-## Running end-to-end tests
+## 📜 Licença
+Este projeto é de livre uso para fins educacionais e de aprendizado.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
+Desenvolvido com ❤️ por [Seu Nome](https://github.com/Pietra-Costa).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
