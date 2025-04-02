@@ -2,6 +2,9 @@
 
 ![image](https://github.com/user-attachments/assets/78ebb0ff-9bb4-46a8-ac0a-a45f5c2f530e)
 
+## 🔗 Site no Vercel
+
+https://rick-morty-challenge-rust.vercel.app/intro
 
 ## 📌 Descrição
 Este é um projeto Angular que consome a API de Rick and Morty, permitindo visualizar personagens, episódios e localizações da famosa série animada.
