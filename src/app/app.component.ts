@@ -9,10 +9,10 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  searchTerm: string = '';
   showSearchBar: boolean = false;
   showNavbar: boolean = true;
-  constructor(private router: Router, private searchService: SearchService) {}
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.router.events
@@ -23,16 +23,6 @@ export class AppComponent implements OnInit {
           currentRoute.includes('home') ||
           currentRoute.includes('episodes') ||
           currentRoute.includes('location');
-        this.searchService.updateSearchTerm(this.searchTerm);
-      });
-    this.searchService.searchTerm$.subscribe((term) => {
-      this.searchTerm = term;
-    });
-
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event) => {
-        const currentRoute = this.router.url;
 
         this.showNavbar = !(
           currentRoute.includes('intro') ||
@@ -42,14 +32,10 @@ export class AppComponent implements OnInit {
       });
   }
 
-  onSearchChange() {
-    this.searchService.updateSearchTerm(this.searchTerm);
+  get isLoggedIn(): boolean {
+    return !!localStorage.getItem('user');
   }
 
-  username: string | null = localStorage.getItem('user');
-  get isLoggedIn(): boolean {
-    return !!this.username;
-  }
   logout() {
     localStorage.removeItem('user');
     window.location.href = '/';

@@ -1,0 +1,16 @@
+body {
+    overflow: hidden !important;
+}
+
+body,
+html,
+app-root,
+.container-fluid,
+.search-container {
+    background-color: #0a0e12 !important;
+    background-image: none !important;
+}
+
+.form-control {
+    z-index: 100;
+}

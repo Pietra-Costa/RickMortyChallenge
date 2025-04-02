@@ -14,6 +14,8 @@ import { LocationComponent } from './pages/location/location.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     LocationComponent,
     LoginComponent,
     ProfileComponent,
+    SearchbarComponent,
+    SidebarComponent,
   ],
   exports: [RouterModule],
   imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule],
