@@ -11,6 +11,8 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   showSearchBar: boolean = false;
   showNavbar: boolean = true;
+  sidebarCollapsed = false;
+  showSidebar: boolean = true;
 
   constructor(private router: Router) {}
 
@@ -27,9 +29,17 @@ export class AppComponent implements OnInit {
         this.showNavbar = !(
           currentRoute.includes('intro') ||
           currentRoute.includes('login') ||
-          currentRoute.includes('details/:id')
+          currentRoute.includes('details/')
+        );
+
+        this.showSidebar = !(
+          currentRoute.includes('intro') || currentRoute.includes('login')
         );
       });
+  }
+
+  handleSidebarToggle(isCollapsed: boolean) {
+    this.sidebarCollapsed = isCollapsed;
   }
 
   get isLoggedIn(): boolean {

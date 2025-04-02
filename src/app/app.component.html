@@ -1,3 +1,17 @@
-<app-navbar *ngIf="showNavbar"></app-navbar>
-<app-searchbar *ngIf="showSearchBar"></app-searchbar>
-<router-outlet></router-outlet>
+<div class="d-flex flex-column min-vh-100">
+    <app-navbar *ngIf="showNavbar" class="sticky-top"></app-navbar>
+
+    <div class="d-flex flex-grow-1 position-relative">
+        <aside *ngIf="showSidebar" class="sidebar-container" [class.collapsed]="sidebarCollapsed">
+            <app-sidebar (toggle)="handleSidebarToggle($event)"></app-sidebar>
+        </aside>
+
+        <main class="flex-grow-1 main-content" [class.sidebar-expanded]="showSidebar && !sidebarCollapsed"
+            [class.sidebar-collapsed]="sidebarCollapsed">
+            <div>
+                <app-searchbar *ngIf="showSearchBar"></app-searchbar>
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,16 +1,44 @@
-body {
-    overflow: hidden !important;
+.sidebar-container {
+    width: 250px;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
+    color: white;
+    height: calc(100vh - 56px);
+    top: 56px;
+    z-index: 1000;
 }
 
-body,
-html,
-app-root,
-.container-fluid,
-.search-container {
-    background-color: #0a0e12 !important;
-    background-image: none !important;
+.sidebar-container.collapsed {
+    width: 70px;
 }
 
-.form-control {
-    z-index: 100;
+.main-content {
+    flex: 1;
+    min-height: calc(100vh - 56px);
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-expanded {
+    margin-left: 50px;
+}
+
+.main-content.sidebar-collapsed {
+    margin-left: 70px;
+}
+
+.main-content:not([class*="sidebar-"]) {
+    margin-left: 0;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .sidebar-container {
+        position: fixed;
+        z-index: 1020;
+    }
+
+    .main-content.sidebar-expanded,
+    .main-content.sidebar-collapsed {
+        margin-left: 0;
+    }
 }
