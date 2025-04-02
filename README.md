@@ -15,21 +15,6 @@ Este é um projeto Angular que consome a API de Rick and Morty, permitindo visua
 - **Bootstrap** (Estilização)
 - **Angular Services & HttpClient** (Consumo da API)
 
-## 📂 Estrutura do Projeto
-```
-📦 rick-and-morty-app
-├── 📁 src
-│   ├── 📁 app
-│   │   ├── 📁 components  # Componentes da aplicação
-│   │   ├── 📁 services    # Serviços de requisições HTTP
-│   │   ├── 📁 models      # Modelos de dados
-│   │   ├── 📄 app.module.ts
-│   │   ├── 📄 app.component.ts
-│   │   ├── 📄 app.routing.module.ts
-├── 📄 package.json
-├── 📄 angular.json
-└── 📄 README.md
-```
 
 ## 🔑 Autenticação
 O sistema possui uma autenticação simples com os seguintes usuários mockados:
