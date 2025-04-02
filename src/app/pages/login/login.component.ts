@@ -22,10 +22,8 @@ export class LoginComponent {
       );
 
       if (isAuthenticated) {
-        // Redireciona para a página de perfil se o login for bem-sucedido
         this.router.navigate(['/home']);
       } else {
-        // Exibe uma mensagem de erro se as credenciais forem inválidas
         this.errorMessage = 'Credenciais inválidas. Tente novamente.';
       }
     } else {

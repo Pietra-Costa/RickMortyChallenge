@@ -21,13 +21,13 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> {
     return this.authService.isLoggedIn().pipe(
-      take(1), // Fazemos o "take(1)" para pegar o valor uma única vez
+      take(1),
       map((isLoggedIn) => {
         if (isLoggedIn) {
-          return true; // Permite acesso à página
+          return true;
         } else {
-          this.router.navigate(['/login']); // Redireciona para a página de login
-          return false; // Bloqueia o acesso à página
+          this.router.navigate(['/login']);
+          return false;
         }
       })
     );

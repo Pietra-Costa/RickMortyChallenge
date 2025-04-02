@@ -1,11 +1,55 @@
-<div *ngIf="character">
-    <h2>{{ character.name }}</h2>
-    <img [src]="character.image" [alt]="character.name" />
+<div *ngIf="character" class="character-details-container">
+    <div class="text-center mb-4">
+        <h2 class="character-name">{{ character.name }}</h2>
+    </div>
 
-    <p><strong>Status:</strong> {{ character.status }}</p>
-    <p><strong>Espécie:</strong> {{ character.species }}</p>
-    <p><strong>Gênero:</strong> {{ character.gender }}</p>
-    <p><strong>Origem:</strong> {{ character.origin?.name }}</p>
-    <p><strong>Localização Atual:</strong> {{ character.location?.name }}</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="character-card">
+                <div class="text-center mb-4">
+                    <img [src]="character.image" [alt]="character.name"
+                        class="character-image rounded-circle border border-4 border-primary">
+                </div>
 
+                <div class="character-info">
+                    <div class="info-item">
+                        <span class="info-label"><i class="fas fa-heartbeat me-2"></i> Status:</span>
+                        <span class="info-value" [ngClass]="{
+                'text-success': character.status === 'Alive',
+                'text-danger': character.status === 'Dead',
+                'text-warning': character.status === 'unknown'
+              }">{{ character.status }}</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label"><i class="fas fa-dna me-2"></i> Espécie:</span>
+                        <span class="info-value">{{ character.species }}</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label"><i class="fas fa-venus-mars me-2"></i> Gênero:</span>
+                        <span class="info-value">{{ character.gender }}</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label"><i class="fas fa-globe-americas me-2"></i> Origem:</span>
+                        <span class="info-value">{{ character.origin?.name || 'Desconhecida' }}</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label"><i class="fas fa-map-marker-alt me-2"></i> Localização:</span>
+                        <span class="info-value">{{ character.location?.name || 'Desconhecida' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed" [ngClass]="{'d-none d-lg-block': true, 'd-lg-none': false}" [style.top]="'40px'"
+        [style.left]="'320px'" [style.bottom]="'20px'" [style.right]="'20px'" style="z-index: 1000;">
+        <button routerLink="/home" class="btn btn-outline-success rounded-pill px-4 py-2"
+            style="border-width: 2px; color: #00ff9f; border-color: #00ff9f;">
+            <i class="fas fa-arrow-left me-2"></i> Voltar
+        </button>
+    </div>
 </div>

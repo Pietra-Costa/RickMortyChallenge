@@ -45,7 +45,7 @@ export class EpisodesComponent implements OnInit {
           this.finished = true;
         }
         this.loading = false;
-        this.filterEpisodes(this.searchTerm); // Reaplica o filtro após carregar os dados
+        this.filterEpisodes(this.searchTerm);
       },
       error: (error) => {
         console.error(error);
