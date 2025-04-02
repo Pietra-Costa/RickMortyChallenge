@@ -73,5 +73,5 @@ O projeto consome a API pública do Rick and Morty:
 Este projeto é de livre uso para fins educacionais e de aprendizado.
 
 ---
-Desenvolvido com ❤️ por [Seu Nome](https://github.com/Pietra-Costa).
+Desenvolvido com ❤️ por Pietra(https://github.com/Pietra-Costa).
 
