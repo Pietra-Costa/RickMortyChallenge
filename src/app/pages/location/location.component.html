@@ -1,13 +1,48 @@
-<div *ngIf="!loading && !finished" class="row">
-    <div *ngFor="let location of filteredLocations" class="col-md-4 col-sm-6 mb-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ location.name }}</h5>
-                <p class="card-text">
-                    <strong>Tipo:</strong> {{ location.type }} <br />
-                    <strong>Dimensão:</strong> {{ location.dimension }}
-                </p>
+<div *ngIf="!loading && !finished" class="row justify-content-center g-4">
+    <div *ngFor="let location of filteredLocations"
+        class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 d-flex justify-content-center">
+        <div class="trading-card">
+            <div class="card-face card-front">
+                <div class="location-portrait">
+                    <svg class="portal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#00ff9f"
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z" />
+                    </svg>
+                    <div class="location-badge">
+                        {{ location.type || 'Desconhecido' }}
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3 class="location-name">{{ location.name }}</h3>
+                    <div class="location-meta">
+                        <span class="dimension">
+                            <i class="fas fa-globe-americas me-2"></i>
+                            {{ location.dimension || 'Dimensão desconhecida' }}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-corners">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                </div>
             </div>
+            <div class="card-face card-back">
+                <div class="card-back-design">
+                    <svg class="portal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path fill="none" stroke="#00ff9f" stroke-width="0.5" d="M20,50 Q50,20 80,50 Q50,80 20,50 Z" />
+                        <path fill="none" stroke="#81d4fa" stroke-width="0.3" d="M30,50 Q50,30 70,50 Q50,70 30,50 Z" />
+                    </svg>
+                    <div class="back-content">
+                        <div class="card-logo">
+                            <span>R&M</span>
+                            <span>LOCATIONS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-glow"></div>
         </div>
     </div>
 </div>
