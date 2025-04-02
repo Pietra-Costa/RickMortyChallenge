@@ -18,9 +18,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  // Método para realizar logout
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']); // Redireciona para a página de login
+    this.router.navigate(['/login']);
   }
 }

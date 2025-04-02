@@ -2,11 +2,15 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 .navbar {
-    background-color: #0a0e12 !important;
+    background: rgba(110, 110, 110, 0.712) !important;
     padding: 0.5rem 1rem;
     box-shadow: 0 0 15px rgba(0, 255, 159, 0.3);
-    border-bottom: 1px solid #00ff9f;
+    border-bottom: 1px solid rgba(0, 255, 159, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
 }
+
 
 .navbar-brand {
     font-family: 'Creepster', cursive;

@@ -1,1 +1,54 @@
-<p>sidebar works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sidebar-container">
+    <input type="checkbox" id="sidebar-toggle" class="d-none">
+    <div class="sidebar bg-dark text-white">
+
+        <div class="sidebar-content">
+            <ul class="nav flex-column px-2">
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center py-2" routerLink="/home" routerLinkActive="active">
+                        <i class="fas fa-home menu-icon"></i>
+                        <span class="menu-text ms-3">Home</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center py-2" routerLink="/episodes" routerLinkActive="active">
+                        <i class="fas fa-tv menu-icon"></i>
+                        <span class="menu-text ms-3">Episódios</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center py-2" routerLink="/location" routerLinkActive="active">
+                        <i class="fas fa-globe-americas menu-icon"></i>
+                        <span class="menu-text ms-3">Lugares</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li> -->
+                <li class="nav-item" *ngIf="username">
+                    <a class="nav-link d-flex align-items-center py-2" routerLink="/profile" routerLinkActive="active">
+                        <i class="fas fa-user menu-icon"></i>
+                        <span class="menu-text ms-3">{{ username }}</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer mt-auto p-3" *ngIf="username">
+                <button class="btn btn-sm btn-portal w-100 d-flex align-items-center justify-content-center"
+                    (click)="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="logout-text ms-2">Sair</span>
+                </button>
+            </div>
+        </div>
+
+        <label for="sidebar-toggle" class="sidebar-toggle-btn" (click)="toggleSidebar()">
+            <i class="fas fa-chevron-left toggle-icon"></i>
+        </label>
+
+    </div>
+    <label for="sidebar-toggle" class="sidebar-overlay"></label>
+</div>
